@@ -20,3 +20,9 @@ The API should be able to query the two datasets.
 The API should come with URLs which will make it easier on the user to find data.
 The API should order the year by the warmest, and show the emissions for that year.
 
+## Update 1
+This week was a but of a struggle with trying to convert my cvs data to json.
+I had to change the data a little to work with my API. 
+I Also started to write the API but since there were some errors I decided to take it out for this commit.
+
+
