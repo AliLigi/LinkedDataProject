@@ -22,6 +22,7 @@ The API should order the year by the warmest, and show the emissions for that ye
 
 ## Update 1
 This week was a but of a struggle with trying to convert my cvs data to json.
+I still have a little problem with the Temperature json file, but i will try my best to make it work.
 I had to change the data a little to work with my API. 
 I Also started to write the API but since there were some errors I decided to take it out for this commit.
 
