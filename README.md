@@ -26,4 +26,8 @@ I still have a little problem with the Temperature json file, but i will try my 
 I had to change the data a little to work with my API. 
 I Also started to write the API but since there were some errors I decided to take it out for this commit.
 
+## Update 2
+Added the climateChange.js.
+This file contains my first attempt at writing the api.
+I have also spent more time on getting the temperature data to work better, its very hard to change due to the amount of items in it. The Api is not fully functioning at this stage.
 
