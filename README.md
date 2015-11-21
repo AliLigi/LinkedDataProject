@@ -31,3 +31,8 @@ Added the climateChange.js.
 This file contains my first attempt at writing the api.
 I have also spent more time on getting the temperature data to work better, its very hard to change due to the amount of items in it. The Api is not fully functioning at this stage.
 
+## Update 3/4
+Changed my dataset again due to the size of the data i couldnt se where i was going wrong therefore i decided to make the dataset only for one year and link the two datasets by the county.
+I have now added new functionality, the client  can now go on the browser and they can pull information from the Emissions database and from the Temperature database.I am in the process of adding insert, update and delete statements.
+
+
