@@ -3,6 +3,7 @@
 var express = require('express');
 var sqlite3 = require('sqlite3').verbose();
 var fs = require('fs');
+//var prompt = require('prompt');
 //======================================================================
 
 //Reading the .json files.
@@ -52,7 +53,53 @@ db.serialize(function() {
               );
   }
   stmt.finalize();
-//===============================================================================================================================================
+//====================================================================================================================================
+//Since the update and the insert dont make scense in this api I decided to only add a Delete statement
+
+/*
+prompt.start();
+	
+console.log("Welcome to this Climate Change API.Since there is alot of information in the databases you will only be allowed to delete");      
+
+function newDelete(){
+  console.log("Delete from the Emissions table ->Press 1. Delete from Temperature table ->Press 2.");
+  prompt.get(['choice'], function(err, result){
+    if (result.choice == 1) {
+      delEmissions();    //  For deleting the Emissions Table
+    }
+    else if (result.choice == 2) {
+      delTemperature();     // For deleting the Temperature Table
+    }
+  });
+}
+function delEmissions(){
+  console.log("Which Countys you want to delete from the Emissions table?");
+  prompt.get(['Countys'], function(err, result){
+    if (err) { return onErr(err); }
+    db.serialize(function(){
+      db.each('DELETE FROM Emissions WHERE Countys LIKE "' + result.Countys + '"',  function(err, row){    // delete all data from Emissions.
+      })
+    })
+    menu();
+  });
+}
+
+function delTemperature(){
+  console.log("Which Countys you want to delete from the temperature table?");
+  prompt.get(['County'], function(err, result){
+    if (err) { return onErr(err); }
+    db.serialize(function(){
+      db.each('DELETE FROM temperature WHERE Countys LIKE "' + result.Countys + '"',  function(err, row){     // delete all data from temperature.
+      })
+    })
+  });
+  menu();
+}
+function onErr(err){
+  console.log(err);
+  menu();
+}
+*/
    
 //Here i am creating inner joins to join the data from the two datasets.
 // My statement is long bevause there is alot of data to be seen from the datasets.
@@ -89,14 +136,6 @@ app.get('/accessTemperature', function(req, res){
 	res.send(temperature);
 });
 
-app.get('/delete/:county', function(req, res){
-    console.log("ABOUT TO DELETE THIS DATA");
-    	db.serialize(function(){
-    	db.each('DELETE FROM Emissions WHERE Countys LIKE "' + req.params.Countys + '"',  function(err, row){
-    	console.log("DELETED!");
-    	res.send("DELETED " + req.params.Countys);
-      })
-    })
-	})
+
 //====================================================================================================================================
 var server = app.listen(8000);
