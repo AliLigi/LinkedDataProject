@@ -3,7 +3,8 @@
 var express = require('express');
 var sqlite3 = require('sqlite3').verbose();
 var fs = require('fs');
-//var prompt = require('prompt');
+var prompt = require('prompt');
+//var bodyparser = require('body-parser');
 //======================================================================
 
 //Reading the .json files.
@@ -56,11 +57,17 @@ db.serialize(function() {
 //====================================================================================================================================
 //Since the update and the insert dont make scense in this api I decided to only add a Delete statement
 
-/*
-prompt.start();
-	
-console.log("Welcome to this Climate Change API.Since there is alot of information in the databases you will only be allowed to delete");      
 
+prompt.start();
+menu();
+function menu(){
+console.log("Welcome to this Climate Change API.Press->1 to  Delete");  
+	prompt.get(['choice'], function(err, result){
+    if (result.choice == 1) {
+      newDelete();    //  For deleting the Emissions Table
+    }
+});
+}
 function newDelete(){
   console.log("Delete from the Emissions table ->Press 1. Delete from Temperature table ->Press 2.");
   prompt.get(['choice'], function(err, result){
@@ -99,7 +106,7 @@ function onErr(err){
   console.log(err);
   menu();
 }
-*/
+
    
 //Here i am creating inner joins to join the data from the two datasets.
 // My statement is long bevause there is alot of data to be seen from the datasets.
