@@ -21,6 +21,8 @@ The API should come with URLs which will make it easier on the user to find data
 The API should order the county and display the Emissions and the tempeature in that County.
 -when you will go on '/' this will show you the posts that i am pulling in from the Emission Dtabase.
 -When you go to '/accessTemperature' it will bring you on to the Temperature Database.
+http://i.imgur.com/S5im1jA.jpg
+![alt tag](hhttp://i.imgur.com/S5im1jA.jpg)
 
 ## Update 1
 This week was a but of a struggle with trying to convert my cvs data to json.
